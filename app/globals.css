@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────
+   BASE RESET + THEME
+───────────────────────────── */
+
+:root {
+  --primary-color: #db1717;
+  --secondary-color: #131313;
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* ─────────────────────────────
+   SCROLLBAR
+───────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #919090;
+  border-radius: 10px;
+}
+
+/* ─────────────────────────────
+   INPUT FOCUS
+───────────────────────────── */
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgb(219 23 23 / 35%);
+}
+
+/* ─────────────────────────────
+   SELECTION
+───────────────────────────── */
+
+::selection {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+
+@layer components {
+  .heading {
+    @apply text-3xl font-bold leading-tight tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl;
+  }
+
+  .badge {
+    @apply mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-(--primary-color);
+  }
+}
