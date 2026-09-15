@@ -1,7 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-import Header from "@/components/Header";
+import Header2 from "@/components/Header2";
 import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
@@ -95,7 +95,7 @@ export default function RootLayout({ children }) {
       className={`${montserrat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Header />
+        <Header2 />
 
         <main className="flex-1">
           {children}
