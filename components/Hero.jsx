@@ -15,7 +15,7 @@ const slides = [
     description:
       "Join our trusted network of experienced professionals and grow your repair business with dependable opportunities and support.",
     buttonText: "Become a Service Partner",
-    buttonLink: "/service",
+    buttonLink: "#",
     image: "/assets/become-partner.jpg",
   },
   {
@@ -26,7 +26,7 @@ const slides = [
     description:
       "Connect with more customers, expand your service coverage and become part of a professional support network built for growth.",
     buttonText: "Explore Opportunities",
-    buttonLink: "/services",
+    buttonLink: "#",
     image: "/assets/grow.jpg",
   },
   {
@@ -37,7 +37,7 @@ const slides = [
     description:
       "Bring your experience to a network that values quality workmanship, customer service and long-term partnerships.",
     buttonText: "Get Started Today",
-    buttonLink: "/contact-us",
+    buttonLink: "#",
     image: "/assets/your-skill.jpg",
   },
 ];

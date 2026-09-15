@@ -17,13 +17,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Benefits", href: "/benefits" },
-  { label: "Submit a Claim", href: "/submit-a-claim" },
-  { label: "Policy", href: "/privacy-policy" },
-  { label: "FAQs", href: "/faqs" },
-
   {
-    label: "Plans",
+    label: "Plan Options",
     href: "/plans",
     children: [
       {
@@ -40,8 +35,9 @@ const navLinks = [
       },
     ],
   },
-
+  { label: "Benefits", href: "/benefits" },
   { label: "Contact Us", href: "/contact-us" },
+  { label: "Submit a Claim", href: "/submit-a-claim" },
 ];
 
 export default function Header() {
