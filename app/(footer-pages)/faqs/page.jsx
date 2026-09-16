@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const faqs = [
     {
@@ -65,73 +66,25 @@ export default function FAQPage() {
 
     return (
         <>
-            <section className="relative overflow-hidden bg-[#f7f7f5] py-16 md:py-20">
-                <div
-                    aria-hidden="true"
-                    className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-red-100/60 blur-3xl"
+            <section className="relative flex min-h-[300px] items-center justify-center overflow-hidden">
+                {/* Background Image */}
+                <Image
+                    src="/assets/faq.webp"
+                    alt=""
+                    fill
+                    priority
+                    className="object-cover"
                 />
-
-                <div
-                    aria-hidden="true"
-                    className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-orange-100/50 blur-3xl"
-                />
-
-                <div className="relative mx-auto max-w-360 px-4">
-                    <div className="max-w-3xl">
-                        <p className="badge mb-4">Frequently Asked Questions</p>
-
-                        <h1 className="text-4xl font-bold leading-tight tracking-tight text-neutral-950 sm:text-5xl md:text-6xl">
-                            Questions?
-                            <span className="text-primary"> We&apos;re here to help.</span>
-                        </h1>
-
-                        <p className="mt-6 max-w-2xl text-base leading-7 text-neutral-600 md:text-lg md:leading-8">
-                            Find answers to common questions about TruCare protection plans,
-                            claims, service, coverage, and customer support.
-                        </p>
-                    </div>
+                {/* Center Logo */}
+                <div className="relative z-10">
+                    <h2 className="heading">
+                        FAQ’S
+                    </h2>
                 </div>
             </section>
 
-            <section className="py-12 md:py-20">
-                <div className="mx-auto grid max-w-360 gap-12 px-4 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
-                    {/* Left intro */}
-                    <aside className="lg:sticky lg:top-28 lg:self-start">
-                        <p className="badge mb-4">Need Help?</p>
-
-                        <h2 className="heading">
-                            Everything you need to
-                            <span className="text-primary"> know.</span>
-                        </h2>
-
-                        <p className="mt-5 max-w-md text-base leading-7 text-neutral-600">
-                            Browse the most common questions below. If you still need help,
-                            our team is available to assist with your protection plan or
-                            claim.
-                        </p>
-
-                        <div className="mt-7 space-y-2 text-sm text-neutral-600">
-                            <p>
-                                Call{" "}
-                                <a
-                                    href="tel:8886992878"
-                                    className="font-semibold text-neutral-950 transition hover:text-primary"
-                                >
-                                    888-699-2TRU
-                                </a>
-                            </p>
-
-                            <p>
-                                Email{" "}
-                                <a
-                                    href="mailto:info@trucareprotection.com"
-                                    className="font-semibold text-neutral-950 transition hover:text-primary"
-                                >
-                                    info@trucareprotection.com
-                                </a>
-                            </p>
-                        </div>
-                    </aside>
+            <section className="py-12 md:py-20 px-6 bg-(--bg--color)">
+                <div className="mx-auto max-w-7xl">
 
                     {/* Accordion */}
                     <div className="space-y-3">

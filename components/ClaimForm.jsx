@@ -73,7 +73,7 @@ const productTypes = [
 const MAX_FILE_SIZE = 2 * 1024 * 1024;
 
 const inputClass =
-    "h-12 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 text-sm text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10";
+    "h-12 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-6 text-sm text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10";
 
 const labelClass =
     "mb-2 block text-sm font-medium text-neutral-800";
@@ -411,7 +411,7 @@ export default function ClaimForm() {
                             rows={6}
                             required
                             placeholder="Please describe what happened and the issue you are experiencing..."
-                            className="w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm leading-6 text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10"
+                            className="w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-3 text-sm leading-6 text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10"
                         />
                     </div>
                 </fieldset>
@@ -467,7 +467,7 @@ export default function ClaimForm() {
                             {files.map((file, index) => (
                                 <li
                                     key={`${file.name}-${index}`}
-                                    className="flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-4 py-3"
+                                    className="flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-6 py-3"
                                 >
                                     <div className="flex min-w-0 items-center gap-3">
                                         <FileImage
@@ -508,9 +508,9 @@ export default function ClaimForm() {
                 {message && (
                     <div
                         role="status"
-                        className={`rounded-xl px-4 py-3 text-sm leading-6 ${status === "success"
-                                ? "bg-green-50 text-green-700"
-                                : "bg-red-50 text-red-700"
+                        className={`rounded-xl px-6 py-3 text-sm leading-6 ${status === "success"
+                            ? "bg-green-50 text-green-700"
+                            : "bg-red-50 text-red-700"
                             }`}
                     >
                         {status === "success" && (

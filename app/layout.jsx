@@ -1,14 +1,17 @@
-import { Montserrat } from "next/font/google";
+import { Hind } from "next/font/google";
+
 import "./globals.css";
 
-import Header2 from "@/components/Header2";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const montserrat = Montserrat({
+const hind = Hind({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-hind",
   display: "swap",
 });
+
 
 export const metadata = {
   metadataBase: new URL("https://trucareprotection.com"),
@@ -92,10 +95,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} h-full antialiased`}
+      className={`${hind.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Header2 />
+        <Header />
 
         <main className="flex-1">
           {children}

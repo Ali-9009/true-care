@@ -70,19 +70,9 @@ export default function HeroSlider() {
   return (
     <section
       aria-label="Featured services"
-      className="relative overflow-hidden bg-[#fdfdfd]"
+      className="relative overflow-hidden bg-(--bg-color)"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-red-100/60 blur-3xl"
-      />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-orange-100/70 blur-3xl"
-      />
-
-      <div className="relative mx-auto grid min-h-170 max-w-360 items-center gap-12 px-4 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-16 ">
+      <div className="relative mx-auto grid min-h-170 max-w-7xl items-center gap-12 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-16 ">
         <div className="relative z-10 max-w-xl">
           <AnimatePresence mode="wait">
             <motion.div

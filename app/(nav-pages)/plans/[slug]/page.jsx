@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Check } from "lucide-react";
 
-import PrimaryBtn from "@/components/PrimaryBtn";
 import { plans } from "../../../data/plans";
 
 export function generateStaticParams() {
@@ -22,7 +20,7 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-        title: `${plan.title} Protection Plan | TruCare Protection`,
+        title: `${plan.title} Coverage | TruCare Protection`,
         description: plan.description,
     };
 }
@@ -37,83 +35,81 @@ export default async function PlanDetailsPage({ params }) {
     }
 
     return (
-        <>
-            <section className="bg-[#f7f7f5] py-14 md:py-20">
-                <div className="mx-auto grid max-w-360 items-center gap-12 px-4 lg:grid-cols-2 lg:gap-16">
-                    <div>
-                        <p className="badge mb-4">
-                            {plan.title} Protection
-                        </p>
+        <main className="bg-(--bg-color)">
+            <section className="px-6 py-12 md:py-16">
+                <div className="mx-auto max-w-7xl">
+                    <section className="">
+                        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 lg:gap-16">
+                            <div>
+                                <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl xl:text-[68px]">
+                                    {plan.title}
+                                    <span className="mt-2 block text-(--primary-color)">
+                                        Coverage
+                                    </span>
+                                </h1>
 
-                        <h1 className="text-4xl font-bold tracking-tight text-neutral-950 sm:text-5xl md:text-6xl">
-                            Protection for your
-                            <span className="text-primary">
-                                {" "} {plan.title.toLowerCase()}.
-                            </span>
-                        </h1>
+                                <p className="mb-2 text-base leading-7 text-neutral-600 md:text-lg">
+                                    {plan.description}
+                                </p>
+                            </div>
 
-                        <p className="mt-6 max-w-xl text-base leading-7 text-neutral-600 md:text-lg">
-                            {plan.description}
-                        </p>
+                            <figure className="relative">
+                                <div aria-hidden="true" />
 
-                        <div className="mt-8">
-                            <PrimaryBtn href="/submit-a-claim">
-                                Submit a Claim
-                            </PrimaryBtn>
+                                <Image
+                                    src={plan.image}
+                                    alt={`${plan.title} coverage`}
+                                    width={1200}
+                                    height={1000}
+                                    className="h-auto w-full rounded-3xl object-cover"
+                                />
+
+                                <figcaption className="sr-only">
+                                    TruCare day-one protection coverage
+                                </figcaption>
+                            </figure>
                         </div>
-                    </div>
+                    </section>
 
-                    <figure className="relative aspect-4/3 overflow-hidden rounded-3xl">
-                        <Image
-                            src={plan.image}
-                            alt={`${plan.title} protection`}
-                            fill
-                            priority
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="object-cover"
-                        />
-                    </figure>
-                </div>
-            </section>
+                    {/* Coverage Sections */}
+                    <div className="mt-16 space-y-12">
+                        {plan.coverageSections.map((section) => (
+                            <section key={section.title}>
+                                <h2 className="mb-5 text-2xl font-semibold text-(--primary-color)">
+                                    {section.title}
+                                </h2>
 
-            <section className="py-14 md:py-20">
-                <div className="mx-auto max-w-360 px-4">
-                    <div className="max-w-2xl">
-                        <p className="badge mb-4">
-                            Products
-                        </p>
+                                <ul className="space-y-3">
+                                    {section.items.map((item) => (
+                                        <li
+                                            key={item}
+                                            className="flex items-start gap-2 text-xl leading-6 text-neutral-900"
+                                        >
+                                            <i
+                                                className="ri-arrow-right-s-line mt-[2px] text-[16px] text-neutral-500"
+                                                aria-hidden="true"
+                                            />
 
-                        <h2 className="heading">
-                            Products available under
-                            <span className="text-primary">
-                                {" "}
-                                {plan.title}
-                            </span>
-                        </h2>
-                    </div>
-
-                    <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {plan.products.map((product) => (
-                            <article
-                                key={product}
-                                className="group flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-5 transition-all duration-300 hover:border-(--primary-color) hover:bg-(--primary-color)"
-                            >
-                                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-50 text-primary transition-all duration-300 group-hover:bg-white group-hover:text-(--primary-color)">
-                                    <Check
-                                        size={17}
-                                        strokeWidth={2.5}
-                                        aria-hidden="true"
-                                    />
-                                </span>
-
-                                <h3 className="font-semibold text-neutral-950 transition-colors duration-300 group-hover:text-white">
-                                    {product}
-                                </h3>
-                            </article>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
                         ))}
                     </div>
+
+                    {/* Bottom Note */}
+                    <div className="mt-16 text-center">
+                        <p className="text-xl font-semibold text-(--primary-color)">
+                            There are no hidden deductibles or costs!
+                        </p>
+
+                        <p className="mx-auto mt-5 max-w-[900px] text-md leading-6 text-neutral-900">
+                            {plan.bottomNote}
+                        </p>
+                    </div>
                 </div>
             </section>
-        </>
+        </main>
     );
 }
