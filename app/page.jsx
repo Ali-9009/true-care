@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 
 import Hero from "@/components/Hero";
+import Banner from "@/components/Banner";
 
 const protectionBenefits = [
   "Accidental Damage",
@@ -63,7 +64,13 @@ const brands = [
 export default function Page() {
   return (
     <>
-      <Hero />
+      <div className="hidden md:block">
+        <Banner />
+      </div>
+
+      <div className="block md:hidden">
+        <Hero />
+      </div>
 
       <section className="px-6 py-18 bg-(--bg-color)">
         <div className="mx-auto max-w-7xl">
@@ -76,6 +83,8 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+    
 
       <section className="px-6 bg-(--bg-color)">
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 lg:gap-16">

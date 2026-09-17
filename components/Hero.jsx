@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import PrimaryBtn from "@/components/PrimaryBtn";
 
@@ -53,19 +52,6 @@ export default function HeroSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [direction, setDirection] = useState(1);
 
-  const nextSlide = () => {
-    setDirection(1);
-    setActiveSlide((current) => (current + 1) % slides.length);
-  };
-
-  const previousSlide = () => {
-    setDirection(-1);
-
-    setActiveSlide(
-      (current) => (current - 1 + slides.length) % slides.length,
-    );
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setDirection(1);
@@ -101,11 +87,7 @@ export default function HeroSlider() {
           className="
             relative
             flex min-h-screen flex-col
-            justify-center
-            py-20
-            lg:min-h-180
-            lg:py-16
-          "
+            justify-center"
         >
           <div
             className="
@@ -367,51 +349,6 @@ export default function HeroSlider() {
               lg:mt-0
             "
           >
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={previousSlide}
-                aria-label="Previous slide"
-                className="
-                  flex size-11
-                  items-center
-                  justify-center
-                  rounded-full
-                  border border-neutral-300
-                  bg-white
-                  text-neutral-900
-                  transition
-                  duration-300
-                  hover:border-neutral-950
-                  hover:bg-neutral-950
-                  hover:text-white
-                "
-              >
-                <ArrowLeft size={18} />
-              </button>
-
-              <button
-                type="button"
-                onClick={nextSlide}
-                aria-label="Next slide"
-                className="
-                  flex size-11
-                  items-center
-                  justify-center
-                  rounded-full
-                  border border-neutral-300
-                  bg-white
-                  text-neutral-900
-                  transition
-                  duration-300
-                  hover:border-neutral-950
-                  hover:bg-neutral-950
-                  hover:text-white
-                "
-              >
-                <ArrowRight size={18} />
-              </button>
-            </div>
           </div>
         </div>
       </div>
