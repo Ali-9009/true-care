@@ -8,10 +8,10 @@ export default function PrivacyPolicyPage() {
     return (
 
         <section className="py-12 md:py-20">
-            <div className="mx-auto max-w-5xl p-6 bg-(--bg-color)">
-                <article className="space-y-10 text-neutral-700">
+            <div className="mx-auto max-w-7xl p-6 bg-neutral-100">
+                <article className="space-y-10 text-neutral-400">
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             1. Information We Collect
                         </h2>
 
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             2. How We Use Your Information
                         </h2>
 
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             3. Claims Information
                         </h2>
 
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             4. Text Messages and Communications
                         </h2>
 
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             5. How We Share Information
                         </h2>
 
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             6. Data Security
                         </h2>
 
@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             7. Data Retention
                         </h2>
 
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             8. Cookies and Website Information
                         </h2>
 
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             9. Your Privacy Choices
                         </h2>
 
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             10. Third-Party Links
                         </h2>
 
@@ -177,7 +177,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             11. Children&apos;s Privacy
                         </h2>
 
@@ -189,7 +189,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             12. Changes to This Privacy Policy
                         </h2>
 
@@ -201,7 +201,7 @@ export default function PrivacyPolicyPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold tracking-tight text-neutral-950">
+                        <h2 className="text-2xl font-semibold tracking-tight text-(--primary-color)">
                             13. Contact Us
                         </h2>
 

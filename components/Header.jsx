@@ -25,7 +25,6 @@ const navLinks = [
             { name: "Appliances", path: "/plans/appliances" },
             { name: "Electronics", path: "/plans/electronics" },
             { name: "Furniture", path: "/plans/furniture" },
-            { name: "All Plans", path: "/plans" },
         ],
     },
     {
@@ -137,13 +136,17 @@ export default function Header2() {
                                     </Link>
 
                                     {link.dropdown && (
-                                        <div className="invisible absolute left-0 top-full z-50 pt-[11px] opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                                            <div className="min-w-[190px] border border-[#dddddd] bg-white shadow-md">
+                                        <div className="invisible absolute left-0 top-full z-90 pt-[12px] opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                                            <div className="relative min-w-[220px] bg-[#8b1220] py-1 shadow-md">
+
+                                                {/* Top triangle */}
+                                                <span className="absolute -top-[9px] left-8 h-0 w-0 border-x-[10px] border-b-[10px] border-x-transparent border-b-[#8b1220] z-99" />
+
                                                 {link.dropdown.map((item) => (
                                                     <Link
                                                         key={item.name}
                                                         href={item.path}
-                                                        className="block border-b border-[#eeeeee] px-6 py-3 text-[13px] font-medium text-[#707070] last:border-b-0 hover:bg-[#f8f8f8] hover:text-[#ff1f2d]"
+                                                        className="block px-7 py-[18px] text-[16px] font-normal uppercase text-white transition-colors hover:bg-[#76101b]"
                                                     >
                                                         {item.name}
                                                     </Link>

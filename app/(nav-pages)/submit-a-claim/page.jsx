@@ -32,8 +32,18 @@ export default function SubmitClaimPage() {
                 </div>
             </section>
 
-            <section className="py-12 md:py-20">
+            <section className="py-12">
                 <div className="mx-auto max-w-6xl px-6">
+                    <div className="mb-10 text-center md:mb-14">
+                        <h1 className="text-3xl font-bold tracking-tight text-(--primary-color) md:text-5xl">
+                            Submit a Claim
+                        </h1>
+
+                        <p className="mx-auto mt-3 max-w-5xl text-md font-semibold text-neutral-700 md:text-2xl">
+                            Welcome to the TruCare claims submission form. Please, fill out the information below and one of our claims specialist will respond within the next 48hrs with next steps.
+                        </p>
+                    </div>
+
                     <ClaimForm />
                 </div>
             </section>

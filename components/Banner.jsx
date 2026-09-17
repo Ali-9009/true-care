@@ -48,9 +48,9 @@ export default function Banner() {
     const slide = slides[currentSlide];
 
     return (
-        <section className="relative flex min-h-[700px] items-center overflow-hidden">
+        <section className="relative flex min-h-[700px] items-center overflow-hidden bg-(--bg-color)">
             {/* TOP PROGRESS BAR */}
-            <div className="absolute left-0 top-0 z-50 h-1 w-full bg-neutral-200">
+            <div className="absolute left-0 top-0 z-20 h-1 w-full bg-neutral-200">
                 <motion.div
                     key={`progress - ${ currentSlide } `}
                     initial={{ scaleX: 0 }}

@@ -73,10 +73,10 @@ const productTypes = [
 const MAX_FILE_SIZE = 2 * 1024 * 1024;
 
 const inputClass =
-    "h-12 w-full rounded-xl border border-neutral-200 bg-neutral-50 px-6 text-sm text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10";
+    "h-12 w-full border-2 border-[#cfcfcf] bg-[#f8f8f8] px-2 text-md text-black rounded-xl  ";
 
-const labelClass =
-    "mb-2 block text-sm font-medium text-neutral-800";
+const requiredInputClass =
+    "h-12 w-full border-2 border-[#cfcfcf] bg-[#f8f8f8] px-2 text-md text-black rounded-xl  ";
 
 export default function ClaimForm() {
     const [files, setFiles] = useState([]);
@@ -157,394 +157,345 @@ export default function ClaimForm() {
     };
 
     return (
-        <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
-            <div className="border-b border-neutral-200 px-6 py-7 sm:px-8 md:px-10">
-                <p className="text-sm font-semibold text-primary">
-                    Claim Information
-                </p>
+        <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-5xl mx-auto bg-white text-black"
+        >
+            {/* Customer Information */}
+            <fieldset>
+                <legend className="mb-5 text-xl font-semibold text-red-600">
+                    Customer Information
+                </legend>
 
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-950 md:text-3xl">
-                    Tell us about your claim
-                </h2>
-
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-neutral-500 md:text-base">
-                    Fields marked with an asterisk are required.
-                </p>
-            </div>
-
-            <form
-                onSubmit={handleSubmit}
-                className="space-y-10 p-6 sm:p-8 md:p-10"
-            >
-                {/* Customer Information */}
-                <fieldset>
-                    <legend className="mb-6 text-xl font-semibold tracking-tight text-neutral-950">
-                        Customer Information
-                    </legend>
-
-                    <div className="grid gap-5 sm:grid-cols-2">
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className={labelClass}
-                            >
-                                Full Name *
-                            </label>
-
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                autoComplete="name"
-                                required
-                                placeholder="Your full name"
-                                className={inputClass}
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className={labelClass}
-                            >
-                                Email Address *
-                            </label>
-
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
-                                required
-                                placeholder="you@example.com"
-                                className={inputClass}
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="phone"
-                                className={labelClass}
-                            >
-                                Primary Phone Number *
-                            </label>
-
-                            <input
-                                id="phone"
-                                name="phone"
-                                type="tel"
-                                autoComplete="tel"
-                                required
-                                placeholder="(555) 000-0000"
-                                className={inputClass}
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="state"
-                                className={labelClass}
-                            >
-                                State / Province *
-                            </label>
-
-                            <select
-                                id="state"
-                                name="state"
-                                required
-                                defaultValue=""
-                                className={inputClass}
-                            >
-                                <option
-                                    value=""
-                                    disabled
-                                >
-                                    Select State / Province
-                                </option>
-
-                                {states.map((state) => (
-                                    <option
-                                        key={state}
-                                        value={state}
-                                    >
-                                        {state}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
+                <div className="space-y-3">
+                    <div>
+                        <input
+                            id="firstName"
+                            name="firstName"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="First Name"
+                        />
                     </div>
-
-                    {/* SMS */}
-                    <div className="mt-6 rounded-2xl bg-neutral-50 p-5">
-                        <p className="text-sm font-medium text-neutral-900">
-                            I authorize TruCare to send me a text message *
-                        </p>
-
-                        <p className="mt-1 text-xs leading-5 text-neutral-500">
-                            If you select Yes, please provide your mobile number as
-                            the primary phone number.
-                        </p>
-
-                        <div className="mt-4 flex gap-6">
-                            <label className="flex cursor-pointer items-center gap-2 text-sm text-neutral-700">
-                                <input
-                                    type="radio"
-                                    name="smsAuthorization"
-                                    value="Yes"
-                                    required
-                                    className="size-4 accent-red-600"
-                                />
-                                Yes
-                            </label>
-
-                            <label className="flex cursor-pointer items-center gap-2 text-sm text-neutral-700">
-                                <input
-                                    type="radio"
-                                    name="smsAuthorization"
-                                    value="No"
-                                    required
-                                    className="size-4 accent-red-600"
-                                />
-                                No
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div className="border-t border-neutral-200" />
-
-                {/* Product Information */}
-                <fieldset>
-                    <legend className="mb-6 text-xl font-semibold tracking-tight text-neutral-950">
-                        Product Information
-                    </legend>
-
-                    <div className="grid gap-5 sm:grid-cols-2">
-                        <div className="sm:col-span-2">
-                            <label
-                                htmlFor="productType"
-                                className={labelClass}
-                            >
-                                Product Type *
-                            </label>
-
-                            <select
-                                id="productType"
-                                name="productType"
-                                required
-                                defaultValue=""
-                                className={inputClass}
-                            >
-                                <option
-                                    value=""
-                                    disabled
-                                >
-                                    Select Product Type
-                                </option>
-
-                                {productTypes.map((type) => (
-                                    <option
-                                        key={type}
-                                        value={type}
-                                    >
-                                        {type}
-                                    </option>
-                                ))}
-                            </select>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="purchaseDate"
-                                className={labelClass}
-                            >
-                                Date of Delivery / Purchase *
-                            </label>
-
-                            <input
-                                id="purchaseDate"
-                                name="purchaseDate"
-                                type="date"
-                                required
-                                className={inputClass}
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="failureDate"
-                                className={labelClass}
-                            >
-                                Failure Report Date *
-                            </label>
-
-                            <input
-                                id="failureDate"
-                                name="failureDate"
-                                type="date"
-                                required
-                                className={inputClass}
-                            />
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div className="border-t border-neutral-200" />
-
-                {/* Product Issue */}
-                <fieldset>
-                    <legend className="mb-6 text-xl font-semibold tracking-tight text-neutral-950">
-                        Product Issue
-                    </legend>
 
                     <div>
-                        <label
-                            htmlFor="productIssue"
-                            className={labelClass}
-                        >
-                            Describe the issue *
-                        </label>
-
-                        <textarea
-                            id="productIssue"
-                            name="productIssue"
-                            rows={6}
-                            required
-                            placeholder="Please describe what happened and the issue you are experiencing..."
-                            className="w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-6 py-3 text-sm leading-6 text-neutral-900 outline-none transition focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/10"
-                        />
-                    </div>
-                </fieldset>
-
-                {/* Upload */}
-                <div>
-                    <div className="mb-3">
-                        <p className="text-sm font-medium text-neutral-800">
-                            Upload Photos / Videos
-                            <span className="ml-1 font-normal text-neutral-400">
-                                Optional
-                            </span>
-                        </p>
-
-                        <p className="mt-1 text-xs leading-5 text-neutral-500">
-                            Upload JPG or MP4 files. Maximum file size is 2 MB per
-                            file. Adding photos or videos of the product and issue
-                            may help expedite your claim.
-                        </p>
-                    </div>
-
-                    <label
-                        htmlFor="claimFiles"
-                        className="group flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 px-6 py-10 text-center transition hover:border-red-400 hover:bg-red-50/40"
-                    >
-                        <span className="flex size-12 items-center justify-center rounded-2xl bg-white text-primary shadow-sm transition-transform duration-300 group-hover:-translate-y-1">
-                            <Upload
-                                size={21}
-                                aria-hidden="true"
-                            />
-                        </span>
-
-                        <span className="mt-4 text-sm font-semibold text-neutral-900">
-                            Choose photos or videos
-                        </span>
-
-                        <span className="mt-1 text-xs text-neutral-500">
-                            JPG or MP4 · Maximum 2 MB each
-                        </span>
-
                         <input
-                            id="claimFiles"
-                            type="file"
-                            multiple
-                            accept=".jpg,.jpeg,.mp4,image/jpeg,video/mp4"
-                            onChange={handleFiles}
-                            className="sr-only"
+                            id="lastName"
+                            name="lastName"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="Last Name"
                         />
-                    </label>
+                    </div>
 
-                    {files.length > 0 && (
-                        <ul className="mt-4 space-y-2">
-                            {files.map((file, index) => (
-                                <li
-                                    key={`${file.name}-${index}`}
-                                    className="flex items-center justify-between gap-4 rounded-xl border border-neutral-200 bg-white px-6 py-3"
-                                >
-                                    <div className="flex min-w-0 items-center gap-3">
-                                        <FileImage
-                                            size={18}
-                                            className="shrink-0 text-primary"
-                                            aria-hidden="true"
-                                        />
+                    <div>
+                        <input
+                            id="address"
+                            name="address"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="Address"
+                        />
+                    </div>
 
-                                        <div className="min-w-0">
-                                            <p className="truncate text-sm font-medium text-neutral-800">
-                                                {file.name}
-                                            </p>
+                    <div>
+                        <input
+                            id="city"
+                            name="city"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="City"
+                        />
+                    </div>
 
-                                            <p className="text-xs text-neutral-400">
-                                                {(file.size / 1024 / 1024).toFixed(2)} MB
-                                            </p>
-                                        </div>
-                                    </div>
+                    <div>
+                        <select
+                            id="state"
+                            name="state"
+                            required
+                            defaultValue=""
+                            className={requiredInputClass}
+                        >
+                            <option value="" disabled>
+                                Select State/Province
+                            </option>
 
-                                    <button
-                                        type="button"
-                                        onClick={() => removeFile(index)}
-                                        aria-label={`Remove ${file.name}`}
-                                        className="flex size-8 shrink-0 items-center justify-center rounded-full text-neutral-400 transition hover:bg-red-50 hover:text-red-600"
-                                    >
-                                        <X
-                                            size={16}
-                                            aria-hidden="true"
-                                        />
-                                    </button>
-                                </li>
+                            {states.map((state) => (
+                                <option key={state} value={state}>
+                                    {state}
+                                </option>
                             ))}
-                        </ul>
-                    )}
+                        </select>
+                    </div>
+
+                    <div>
+                        <input
+                            id="zip"
+                            name="zip"
+                            type="text"
+                            required
+                            className={requiredInputClass}
+                            placeholder="Zip/Postal Code"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="country"
+                            name="country"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="Country"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            className={inputClass}
+                            placeholder="E-mail"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            required
+                            className={requiredInputClass}
+                            placeholder="Phone Number"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="secondaryPhone"
+                            name="secondaryPhone"
+                            type="tel"
+                            className={requiredInputClass}
+                            placeholder="Phone Secondary"
+                        />
+                    </div>
                 </div>
 
-                {/* Response message */}
-                {message && (
-                    <div
-                        role="status"
-                        className={`rounded-xl px-6 py-3 text-sm leading-6 ${status === "success"
-                            ? "bg-green-50 text-green-700"
-                            : "bg-red-50 text-red-700"
-                            }`}
-                    >
-                        {status === "success" && (
-                            <CheckCircle2
-                                size={18}
-                                className="mr-2 inline-block"
-                                aria-hidden="true"
-                            />
-                        )}
+                <div className="mt-5 text-md">
+                    <p className="font-medium">
+                        I authorize us to send me a text message*
+                    </p>
 
-                        {message}
+                    <p className="mt-2">
+                        If you select Yes, please indicate your mobile number as
+                        the primary phone number
+                    </p>
+
+                    <div className="mt-2 space-y-1">
+                        <label className="flex items-center gap-1">
+                            <input
+                                type="radio"
+                                name="smsAuthorization"
+                                value="Yes"
+                                required
+                            />
+                            Yes
+                        </label>
+
+                        <label className="flex items-center gap-1">
+                            <input
+                                type="radio"
+                                name="smsAuthorization"
+                                value="No"
+                                required
+                            />
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            {/* Product Information */}
+            <fieldset className="mt-8">
+                <legend className="mb-5 text-xl font-semibold text-red-600">
+                    Product Information
+                </legend>
+
+                <div className="space-y-3">
+                    <div>
+                        <input
+                            id="purchaseLocation"
+                            name="purchaseLocation"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="What store was product purchased?"
+                        />
+                    </div>
+
+                    <div>
+                        <select
+                            id="productType"
+                            name="productType"
+                            required
+                            defaultValue=""
+                            className={requiredInputClass}
+                        >
+                            <option value="" disabled>
+                                Select Product Type*
+                            </option>
+
+                            {productTypes.map((type) => (
+                                <option key={type} value={type}>
+                                    {type}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div>
+                        <input
+                            id="brand"
+                            name="brand"
+                            type="text"
+                            required
+                            className={inputClass}
+                            placeholder="Brand"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="serial"
+                            name="serial"
+                            type="text"
+                            className={inputClass}
+                            placeholder="Serial"
+                        />
+                    </div>
+
+                    <div>
+                        <input
+                            id="model"
+                            name="model"
+                            type="text"
+                            className={inputClass}
+                            placeholder="Model"
+                        />
+                    </div>
+
+                    <div className="w-[260px]">
+                        <label htmlFor="purchaseDate">
+                            Date of Delivery / Date of Purchase*
+                        </label>
+                        <input
+                            id="purchaseDate"
+                            name="purchaseDate"
+                            type="date"
+                            required
+                            className={requiredInputClass}
+                        />
+                    </div>
+
+                    <div className="w-[260px]">
+                        <label htmlFor="failureDate">
+                            Failure Report Date*
+                        </label>
+                        <input
+                            id="failureDate"
+                            name="failureDate"
+                            type="date"
+                            required
+                            className={requiredInputClass}
+                        />
+                    </div>
+                </div>
+            </fieldset>
+
+            {/* Product Issue */}
+            <fieldset className="mt-8">
+                <legend className="mb-5 text-xl font-semibold text-red-600">
+                    Product Issue
+                </legend>
+
+                <textarea
+                    id="productIssue"
+                    name="productIssue"
+                    rows={4}
+                    required
+                    className="w-full resize-y border-2 border-[#cfcfcf] bg-[#f8f8f8] p-2 text-md rounded-xl text-black outline-none focus:border-[#999]"
+                    placeholder="Product Issue & Cause - please provide a short description of
+                    the issue"
+                />
+            </fieldset>
+
+            {/* Uploads */}
+            <div className="mt-5 text-md">
+                <p>
+                    UPLOAD PHOTOS/VIDEOS (jpg or MP4 format, maximum file size 2MB)
+                    - Adding photos of the covered product and issue will assist in
+                    expediting your claim. (OPTIONAL)
+                </p>
+
+                <div className="mt-3 rounded-xl w-65 py-3 px-6 border-2 border-(--primary-color)">
+                    <input
+                        id="claimFiles"
+                        type="file"
+                        multiple
+                        accept=".jpg,.jpeg,.mp4,image/jpeg,video/mp4"
+                        onChange={handleFiles}
+                        className="block text-md file:mr-2 file:border file:border-red-500 file:bg-white file:px-2 file:py-[2px] file:text-md"
+                    />
+                </div>
+
+                {files.length > 0 && (
+                    <div className="mt-2 space-y-1">
+                        {files.map((file, index) => (
+                            <div
+                                key={`${file.name}-${index}`}
+                                className="flex items-center gap-2"
+                            >
+                                <span>{file.name}</span>
+
+                                <button
+                                    type="button"
+                                    onClick={() => removeFile(index)}
+                                    className="text-red-600"
+                                >
+                                    Remove
+                                </button>
+                            </div>
+                        ))}
                     </div>
                 )}
+            </div>
 
-                {/* Submit */}
+            {message && (
+                <p
+                    className={`mt-4 text-[10px] ${status === "success"
+                        ? "text-green-600"
+                        : "text-red-600"
+                        }`}
+                >
+                    {message}
+                </p>
+            )}
+
+            <div className="mt-6 text-center">
                 <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-red-600 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 disabled:pointer-events-none disabled:opacity-60 md:text-base"
+                    className="bg-[#ff1f2d] px-4 py-3 rounded-xl text-md font-semibold uppercase text-white hover:bg-[#db1723] disabled:opacity-60"
                 >
-                    {status === "sending" ? (
-                        <>
-                            <Loader2
-                                size={18}
-                                className="animate-spin"
-                                aria-hidden="true"
-                            />
-                            Submitting Claim...
-                        </>
-                    ) : (
-                        "Submit Claim"
-                    )}
+                    {status === "sending" ? "Submitting..." : "Submit Claim"}
                 </button>
-            </form>
-        </div>
+            </div>
+        </form>
     );
 }
