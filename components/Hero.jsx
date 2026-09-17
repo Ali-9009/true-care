@@ -42,28 +42,38 @@ const slides = [
   },
 ];
 
-const AUTO_PLAY_TIME = 6000;
+const AUTO_PLAY_TIME = 8000;
+
+const transition = {
+  duration: 1.5,
+  ease: [0.16, 1, 0.3, 1],
+};
 
 export default function HeroSlider() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   const nextSlide = () => {
+    setDirection(1);
     setActiveSlide((current) => (current + 1) % slides.length);
   };
 
   const previousSlide = () => {
+    setDirection(-1);
+
     setActiveSlide(
       (current) => (current - 1 + slides.length) % slides.length,
     );
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
+      setDirection(1);
       setActiveSlide((current) => (current + 1) % slides.length);
     }, AUTO_PLAY_TIME);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [activeSlide]);
 
   const slide = slides[activeSlide];
 
@@ -72,55 +82,310 @@ export default function HeroSlider() {
       aria-label="Featured services"
       className="relative overflow-hidden bg-(--bg-color)"
     >
-      <div className="relative mx-auto grid min-h-170 max-w-7xl items-center gap-12 px-6 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-16 ">
-        <div className="relative z-10 max-w-xl">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={slide.id}
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.55,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+      {/* TOP PROGRESS BAR */}
+      <div className="absolute left-0 top-0 z-50 h-1 w-full bg-neutral-200">
+        <motion.div
+          key={`progress-${activeSlide}`}
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{
+            duration: AUTO_PLAY_TIME / 1000,
+            ease: "linear",
+          }}
+          className="h-full w-full origin-left bg-neutral-400"
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <div
+          className="
+            relative
+            flex min-h-screen flex-col
+            justify-center
+            py-20
+            lg:min-h-180
+            lg:py-16
+          "
+        >
+          <div
+            className="
+              grid items-center
+              gap-12
+              lg:grid-cols-[0.9fr_1.1fr]
+              lg:gap-16
+            "
+          >
+            {/* TEXT */}
+            <div
+              className="
+                relative z-20
+                min-h-105
+                sm:min-h-110
+                lg:min-h-120
+              "
             >
-              <motion.p
-                initial={{ opacity: 0, x: -15 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-(--primary-color)"
-              >
-                {slide.eyebrow}
-              </motion.p>
+              <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                  key={slide.id}
+                  custom={direction}
+                  initial={{
+                    opacity: 0,
+                    x: direction > 0 ? 100 : -100,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    x: direction > 0 ? -80 : 80,
+                  }}
+                  transition={transition}
+                  className="
+                    absolute inset-x-0
+                    top-1/2
+                    -translate-y-1/2
+                    lg:max-w-xl
+                  "
+                >
+                  <motion.p
+                    initial={{
+                      opacity: 0,
+                      y: 16,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.35,
+                      duration: 0.8,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="
+                      mb-4
+                      text-xs font-semibold
+                      uppercase
+                      tracking-[0.2em]
+                      text-(--primary-color)
+                      sm:mb-5 sm:text-sm
+                    "
+                  >
+                    {slide.eyebrow}
+                  </motion.p>
 
-              <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl xl:text-[68px]">
-                {slide.title}
+                  <motion.h1
+                    initial={{
+                      opacity: 0,
+                      y: 24,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.45,
+                      duration: 0.9,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="
+                      text-[40px]
+                      font-bold
+                      leading-[1.05]
+                      tracking-[-0.04em]
+                      text-neutral-950
+                      sm:text-5xl
+                      lg:text-6xl
+                      xl:text-[68px]
+                    "
+                  >
+                    {slide.title}
 
-                <span className="mt-2 block text-(--primary-color)">
-                  {slide.highlight}
-                </span>
-              </h1>
+                    <span className="mt-1 block text-(--primary-color)">
+                      {slide.highlight}
+                    </span>
+                  </motion.h1>
 
-              <p className="mt-6 max-w-lg text-base leading-7 text-neutral-600 sm:text-lg sm:leading-8">
-                {slide.description}
-              </p>
+                  <motion.p
+                    initial={{
+                      opacity: 0,
+                      y: 24,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.58,
+                      duration: 0.9,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="
+                      mt-5
+                      max-w-lg
+                      text-[15px]
+                      leading-7
+                      text-neutral-600
+                      sm:mt-6
+                      sm:text-lg
+                      sm:leading-8
+                    "
+                  >
+                    {slide.description}
+                  </motion.p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <PrimaryBtn href={slide.buttonLink}>
-                  {slide.buttonText}
-                </PrimaryBtn>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 20,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.7,
+                      duration: 0.9,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="mt-7 sm:mt-8"
+                  >
+                    <PrimaryBtn href={slide.buttonLink}>
+                      {slide.buttonText}
+                    </PrimaryBtn>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          <div className="mt-10 flex items-center gap-5">
+            {/* IMAGE */}
+            <div
+              className="
+                relative
+                mx-auto
+                aspect-square
+                w-full
+                max-w-100
+                sm:max-w-125
+                lg:ml-auto
+                lg:max-w-145
+              "
+            >
+              <div
+                aria-hidden="true"
+                className="
+                  absolute
+                  inset-[7%]
+                  rounded-full
+                  bg-(--primary-color)/20
+                  blur-3xl
+                "
+              />
+
+              <AnimatePresence initial={false} custom={direction}>
+                <motion.figure
+                  key={slide.id}
+                  initial={{
+                    opacity: 0,
+                    x: direction > 0 ? 70 : -70,
+                    scale: 0.96,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    x: direction > 0 ? -50 : 50,
+                    scale: 1.02,
+                  }}
+                  transition={{
+                    duration: 1.7,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  className="absolute inset-0"
+                >
+                  <div className="relative h-full w-full rounded-full p-2 sm:p-3">
+                    <div
+                      className="
+                        absolute inset-2
+                        rounded-full
+                        shadow-[0_0_25px_rgba(220,38,38,0.4),0_0_70px_rgba(220,38,38,0.2)]
+                      "
+                    />
+
+                    <div
+                      className="
+                        relative h-full w-full
+                        overflow-hidden
+                        rounded-full
+                        border-5 border-white
+                        sm:border-8
+                      "
+                    >
+                      <motion.div
+                        initial={{ scale: 1.08 }}
+                        animate={{ scale: 1 }}
+                        transition={{
+                          duration: 3,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={slide.image}
+                          alt=""
+                          fill
+                          priority={activeSlide === 0}
+                          sizes="
+                            (max-width: 640px) 90vw,
+                            (max-width: 1024px) 70vw,
+                            45vw
+                          "
+                          className="object-cover"
+                        />
+                      </motion.div>
+
+                      <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
+                    </div>
+                  </div>
+                </motion.figure>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* BOTTOM CONTROLS */}
+          <div
+            className="
+              mt-10
+              flex items-center
+              justify-between
+              lg:absolute
+              lg:bottom-10
+              lg:left-0
+              lg:mt-0
+            "
+          >
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={previousSlide}
                 aria-label="Previous slide"
-                className="flex size-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-900 transition hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
+                className="
+                  flex size-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border border-neutral-300
+                  bg-white
+                  text-neutral-900
+                  transition
+                  duration-300
+                  hover:border-neutral-950
+                  hover:bg-neutral-950
+                  hover:text-white
+                "
               >
                 <ArrowLeft size={18} />
               </button>
@@ -129,95 +394,25 @@ export default function HeroSlider() {
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
-                className="flex size-11 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-900 transition hover:border-neutral-950 hover:bg-neutral-950 hover:text-white"
+                className="
+                  flex size-11
+                  items-center
+                  justify-center
+                  rounded-full
+                  border border-neutral-300
+                  bg-white
+                  text-neutral-900
+                  transition
+                  duration-300
+                  hover:border-neutral-950
+                  hover:bg-neutral-950
+                  hover:text-white
+                "
               >
                 <ArrowRight size={18} />
               </button>
             </div>
-
-            <div className="flex flex-1 items-center gap-2">
-              {slides.map((item, index) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  className="group h-5 flex-1 py-2"
-                >
-                  <span className="block h-0.5 overflow-hidden rounded-full bg-neutral-300">
-                    {activeSlide === index && (
-                      <motion.span
-                        key={activeSlide}
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{
-                          duration: AUTO_PLAY_TIME / 1000,
-                          ease: "linear",
-                        }}
-                        className="block h-full origin-left bg-(--primary-color)"
-                      />
-                    )}
-                  </span>
-                </button>
-              ))}
-            </div>
           </div>
-        </div>
-
-        <div className="relative mx-auto w-full max-w-152 lg:mx-0 lg:ml-auto">
-          <div
-            aria-hidden="true"
-            className="absolute inset-6 rounded-[42%_58%_48%_52%/55%_42%_58%_45%] bg-red-500/15 blur-3xl"
-          />
-
-          <AnimatePresence mode="wait">
-            <motion.figure
-              key={slide.id}
-              initial={{
-                opacity: 0,
-                scale: 0.94,
-                x: 40,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                x: 0,
-              }}
-              exit={{
-                opacity: 0,
-                scale: 1.03,
-                x: -30,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="relative"
-            >
-              <div className="relative aspect-[1.05/1] overflow-hidden rounded-[42%_58%_48%_52%/55%_42%_58%_45%] border-6 border-white shadow-[0_30px_100px_rgba(220,38,38,0.20)] sm:border-12">
-                <motion.div
-                  initial={{ scale: 1.08 }}
-                  animate={{ scale: 1 }}
-                  transition={{
-                    duration: 1.2,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={slide.image}
-                    alt=""
-                    fill
-                    priority={activeSlide === 0}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </motion.div>
-
-                <div className="absolute inset-0 bg-linear-to-t from-black/15 via-transparent to-transparent" />
-              </div>
-            </motion.figure>
-          </AnimatePresence>
         </div>
       </div>
     </section>
