@@ -84,10 +84,8 @@ export default function Page() {
         </div>
       </section>
 
-    
-
-      <section className="px-6 bg-(--bg-color)">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 lg:gap-16">
+      <section className="px-6 py-6 bg-(--bg-color)">
+        <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
 
           <figure className="relative">
             <div aria-hidden="true" />
@@ -132,8 +130,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="px-6 bg-(--bg-color)">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 lg:gap-16">
+      <section className="px-6 py-6 bg-(--bg-color)">
+        <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
 
           <div>
             <h2 className="heading mb-5 max-w-xl">
@@ -164,7 +162,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="pb-16 px-6 pt-8 bg-(--bg-color)">
+      <section className="py-16 px-6 pt-8 bg-(--bg-color)">
         <div className="mx-auto max-w-7xl">
 
           <div>
@@ -194,8 +192,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="px-6 bg-(--bg-color)">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 lg:gap-16">
+      <section className="px-6 py-6 bg-(--bg-color)">
+        <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
 
           <figure className="relative">
             <div aria-hidden="true" />

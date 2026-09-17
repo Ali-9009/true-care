@@ -1,59 +1,64 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const faqs = [
     {
-        question: "What is TruCare Protection?",
+        question: "1. When does the plan begin?",
         answer:
-            "TruCare Protection provides protection plans designed to help customers with unexpected product failures, breakdowns, accidental damage, and other covered issues.",
+            "Starting on the date of purchase/delivery of the covered product and until the end of the contract term, this DOES NOT take place of the manufacturer warranty. TruCare Protection will repair or replace the covered product when caused by a breakdown, including normal wear and tear, and mechanical or electrical failure caused as a direct result of a power surge (in absence of insurance). We will also repair damage resulting from Accidental Damage from Handling including stains, rips and tears.",
     },
     {
-        question: "What products can TruCare plans cover?",
-        answer:
-            "TruCare protection plans may be available for appliances, electronics, furniture, mattresses, fitness equipment, vacuums, sewing machines, and other eligible products.",
+        question: "2. How do I submit a claim?",
+        answer: (
+            <>
+                To submit a claim, you can visit our website at{" "}
+                <a
+                    href="https://www.trucareprotection.com/claims"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-red-600 underline underline-offset-2 hover:text-red-700"
+                >
+                    www.trucareprotection.com/claims
+                </a>{" "}
+                to submit a claim virtually, or you can give us a call at{" "}
+                <a
+                    href="tel:18886992287"
+                    className="font-medium text-red-600 underline underline-offset-2 hover:text-red-700"
+                >
+                    888-699-2TRU (2878)
+                </a>
+                .
+            </>
+        ),
     },
     {
-        question: "When does my protection begin?",
+        question: "3. Do I need to register my TruCare Protection Plan?",
         answer:
-            "Coverage depends on the specific plan and product. Some TruCare plans are designed to provide protection from day one, while others may begin after the manufacturer warranty or according to the terms of the plan.",
+            "No registration is needed! Your protection plan is ready to do at the time of purchase! If possible, please keep a copy of your sales receipt.",
     },
     {
-        question: "How do I submit a claim?",
+        question: "4. How does my product get serviced?",
         answer:
-            "You can submit a claim through our online claim form. You will be asked to provide your contact details, product information, purchase or delivery date, failure date, and a description of the issue.",
+            "TruCare Protection offers Nationwide Service: Carry-in, Depot and On-site Repair Services. Most of our services are provided by our in-home service technicians.",
     },
     {
-        question: "Can I upload photos or videos with my claim?",
-        answer:
-            "Yes. You can optionally upload JPG photos or MP4 videos to help our claims specialists better understand the issue and potentially speed up the review process.",
-    },
-    {
-        question: "How long does it take to hear back after submitting a claim?",
-        answer:
-            "Our claims team typically responds within 48 hours with next steps after receiving your claim submission.",
-    },
-    {
-        question: "What is remote diagnostics?",
-        answer:
-            "Remote diagnostics allows our team or service partners to evaluate certain product issues before an in-home visit. This can help improve first-time fix rates, reduce unnecessary service visits, and speed up the service process.",
-    },
-    {
-        question: "Does TruCare provide in-home service?",
-        answer:
-            "Depending on the covered product, issue, and protection plan, TruCare may coordinate in-home service through qualified service professionals.",
-    },
-    {
-        question: "Can I receive text message updates?",
-        answer:
-            "Yes. If you provide authorization and use your mobile number as your primary phone number, TruCare may send text messages related to your claim or service request.",
-    },
-    {
-        question: "How can I contact TruCare?",
-        answer:
-            "You can contact TruCare by phone at 888-699-2TRU or by email at info@trucareprotection.com.",
+        question: "5. How do I get a copy of my Program Terms & Conditions?",
+        answer: (
+            <>
+                You can send an email to{" "}
+                <a
+                    href="mailto:info@trucareprotection.com"
+                    className="font-medium text-red-600 underline underline-offset-2 hover:text-red-700"
+                >
+                    info@trucareprotection.com
+                </a>{" "}
+                asking for the Terms and Conditions. Also, when you sign up, you
+                receive a copy of your T&amp;C’s in a Welcome email.
+            </>
+        ),
     },
 ];
 
@@ -83,10 +88,8 @@ export default function FAQPage() {
                 </div>
             </section>
 
-            <section className="py-12 md:py-20 px-6 bg-(--bg--color)">
+            <section className="bg-[#e2e2e2] px-6 py-12 md:py-20">
                 <div className="mx-auto max-w-7xl">
-
-                    {/* Accordion */}
                     <div className="space-y-3">
                         {faqs.map((faq, index) => {
                             const isOpen = openIndex === index;
@@ -94,10 +97,7 @@ export default function FAQPage() {
                             return (
                                 <article
                                     key={faq.question}
-                                    className={`overflow-hidden rounded-2xl border transition-all duration-300 ${isOpen
-                                        ? "border-red-200 bg-red-50/30"
-                                        : "border-neutral-200 bg-white"
-                                        }`}
+                                    className="overflow-hidden"
                                 >
                                     <h2>
                                         <button
@@ -106,21 +106,23 @@ export default function FAQPage() {
                                             aria-expanded={isOpen}
                                             className="flex w-full items-center justify-between gap-6 px-5 py-5 text-left sm:px-6"
                                         >
-                                            <span className="text-base font-semibold leading-6 text-neutral-950 sm:text-lg">
+                                            <span
+                                                className={`text-base font-semibold leading-6 transition-colors duration-300 sm:text-lg ${isOpen
+                                                    ? "text-red-600"
+                                                    : "text-neutral-950"
+                                                    }`}
+                                            >
                                                 {faq.question}
                                             </span>
 
                                             <span
-                                                className={`flex size-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${isOpen
-                                                    ? "rotate-180 bg-red-600 text-white"
-                                                    : "bg-neutral-100 text-neutral-700"
+                                                className={`flex size-9 shrink-0 bg-white items-center justify-center text-2xl font-light transition-colors duration-300 ${isOpen
+                                                    ? "text-red-600"
+                                                    : "text-neutral-950"
                                                     }`}
+                                                aria-hidden="true"
                                             >
-                                                <ChevronDown
-                                                    size={18}
-                                                    strokeWidth={2}
-                                                    aria-hidden="true"
-                                                />
+                                                {isOpen ? "−" : "+"}
                                             </span>
                                         </button>
                                     </h2>
@@ -132,7 +134,7 @@ export default function FAQPage() {
                                             }`}
                                     >
                                         <div className="overflow-hidden">
-                                            <p className="px-5 pb-6 pr-14 text-sm leading-7 text-neutral-600 sm:px-6 sm:text-base">
+                                            <p className="px-5 pb-6 pr-14 text-lg leading-7 text-neutral-600 sm:px-6">
                                                 {faq.answer}
                                             </p>
                                         </div>
@@ -140,6 +142,21 @@ export default function FAQPage() {
                                 </article>
                             );
                         })}
+                    </div>
+
+                    <div className="mt-6 text-center">
+                        <h2 className="text-2xl font-bold text-[#ff1f2d] md:text-3xl">
+                            Need help or have other questions?
+                        </h2>
+
+                        <div className="mt-12">
+                            <Link
+                                href="/contact"
+                                className="inline-flex min-h-[62px] items-center justify-center rounded-full bg-gradient-to-r from-[#ff1f2d] to-[#8b1220] px-8 text-base font-medium text-white transition-transform duration-300 hover:-translate-y-0.5"
+                            >
+                                Contact Us
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
