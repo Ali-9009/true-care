@@ -4,8 +4,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 export default function Contact() {
-
-    const [interest, setInterest] = useState("");
+  const [interest, setInterest] = useState("");
 
   const dealerOptions = [
     "Cell Phone Store",
@@ -22,7 +21,7 @@ export default function Contact() {
     "Electronic Services",
   ];
 
-    const inputClass =
+  const inputClass =
     "h-[46px] w-full rounded-[10px] border border-[#ededed] bg-white px-3 text-[16px] text-[#222] outline-none transition focus:border-(--primary-color)";
 
   return (
@@ -65,194 +64,194 @@ export default function Contact() {
           <div className="mt-24 grid gap-16 lg:grid-cols-[1.1fr_0.8fr] lg:items-start">
             {/* Form */}
             <form className="space-y-6">
-      <div>
-        <label htmlFor="companyName" className="sr-only">
-          Company Name
-        </label>
+              <div>
+                <label htmlFor="companyName" className="sr-only">
+                  Company Name
+                </label>
 
-        <input
-          id="companyName"
-          name="companyName"
-          type="text"
-          autoComplete="organization"
-          required
-          placeholder="Company Name*"
-          className={inputClass}
-        />
-      </div>
+                <input
+                  id="companyName"
+                  name="companyName"
+                  type="text"
+                  autoComplete="organization"
+                  required
+                  placeholder="Company Name*"
+                  className={inputClass}
+                />
+              </div>
 
-      <div>
-        <label htmlFor="name" className="sr-only">
-          Name
-        </label>
+              <div>
+                <label htmlFor="name" className="sr-only">
+                  Name
+                </label>
 
-        <input
-          id="name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          required
-          placeholder="Name*"
-          className={inputClass}
-        />
-      </div>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  placeholder="Name*"
+                  className={inputClass}
+                />
+              </div>
 
-      <div>
-        <label htmlFor="email" className="sr-only">
-          Email
-        </label>
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
 
-        <input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          placeholder="E-mail*"
-          className={inputClass}
-        />
-      </div>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  placeholder="E-mail*"
+                  className={inputClass}
+                />
+              </div>
 
-      <div>
-        <label htmlFor="address" className="sr-only">
-          Address
-        </label>
+              <div>
+                <label htmlFor="address" className="sr-only">
+                  Address
+                </label>
 
-        <input
-          id="address"
-          name="address"
-          type="text"
-          autoComplete="street-address"
-          required
-          placeholder="Address*"
-          className={inputClass}
-        />
-      </div>
+                <input
+                  id="address"
+                  name="address"
+                  type="text"
+                  autoComplete="street-address"
+                  required
+                  placeholder="Address*"
+                  className={inputClass}
+                />
+              </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <div>
-          <label htmlFor="city" className="sr-only">
-            City
-          </label>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <label htmlFor="city" className="sr-only">
+                    City
+                  </label>
 
-          <input
-            id="city"
-            name="city"
-            type="text"
-            autoComplete="address-level2"
-            required
-            placeholder="City*"
-            className={inputClass}
-          />
-        </div>
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    autoComplete="address-level2"
+                    required
+                    placeholder="City*"
+                    className={inputClass}
+                  />
+                </div>
 
-        <div>
-          <label htmlFor="zipCode" className="sr-only">
-            Zip Code
-          </label>
+                <div>
+                  <label htmlFor="zipCode" className="sr-only">
+                    Zip Code
+                  </label>
 
-          <input
-            id="zipCode"
-            name="zipCode"
-            type="text"
-            autoComplete="postal-code"
-            required
-            placeholder="Zip Code*"
-            className={inputClass}
-          />
-        </div>
-      </div>
+                  <input
+                    id="zipCode"
+                    name="zipCode"
+                    type="text"
+                    autoComplete="postal-code"
+                    required
+                    placeholder="Zip Code*"
+                    className={inputClass}
+                  />
+                </div>
+              </div>
 
-      <div>
-        <label htmlFor="state" className="sr-only">
-          State
-        </label>
+              <div>
+                <label htmlFor="state" className="sr-only">
+                  State
+                </label>
 
-        <input
-          id="state"
-          name="state"
-          type="text"
-          autoComplete="address-level1"
-          required
-          placeholder="State*"
-          className={inputClass}
-        />
-      </div>
+                <input
+                  id="state"
+                  name="state"
+                  type="text"
+                  autoComplete="address-level1"
+                  required
+                  placeholder="State*"
+                  className={inputClass}
+                />
+              </div>
 
-      <div>
-        <label htmlFor="interest" className="sr-only">
-          Interested in Becoming
-        </label>
+              <div>
+                <label htmlFor="interest" className="sr-only">
+                  Interested in Becoming
+                </label>
 
-        <select
-          id="interest"
-          name="interest"
-          required
-          value={interest}
-          onChange={(e) => setInterest(e.target.value)}
-          className={inputClass}
-        >
-          <option value="">Interested in Becoming*</option>
-          <option value="dealer">A Dealer</option>
-          <option value="service-partner">A Service Partner</option>
-        </select>
-      </div>
+                <select
+                  id="interest"
+                  name="interest"
+                  required
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
+                  className={inputClass}
+                >
+                  <option value="">Interested in Becoming*</option>
+                  <option value="dealer">A Dealer</option>
+                  <option value="service-partner">A Service Partner</option>
+                </select>
+              </div>
 
-      {interest && (
-        <div>
-          <label htmlFor="businessType" className="sr-only">
-            Business Type
-          </label>
+              {interest && (
+                <div>
+                  <label htmlFor="businessType" className="sr-only">
+                    Business Type
+                  </label>
 
-          <select
-            id="businessType"
-            name="businessType"
-            required
-            defaultValue=""
-            className={inputClass}
-          >
-            <option value="">
-              {interest === "dealer"
-                ? "Select Dealer Type*"
-                : "Select Service Type*"}
-            </option>
+                  <select
+                    id="businessType"
+                    name="businessType"
+                    required
+                    defaultValue=""
+                    className={inputClass}
+                  >
+                    <option value="">
+                      {interest === "dealer"
+                        ? "Select Dealer Type*"
+                        : "Select Service Type*"}
+                    </option>
 
-            {(interest === "dealer"
-              ? dealerOptions
-              : serviceOptions
-            ).map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
+                    {(interest === "dealer"
+                      ? dealerOptions
+                      : serviceOptions
+                    ).map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
-      <div>
-        <label htmlFor="message" className="sr-only">
-          Message
-        </label>
+              <div>
+                <label htmlFor="message" className="sr-only">
+                  Message
+                </label>
 
-        <textarea
-          id="message"
-          name="message"
-          rows={6}
-          required
-          placeholder="Message*"
-          className="min-h-[145px] w-full resize-y rounded-[10px] border border-[#ededed] bg-white px-3 py-3 text-[16px] text-[#222] outline-none transition focus:border-(--primary-color)"
-        />
-      </div>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  required
+                  placeholder="Message*"
+                  className="min-h-[145px] w-full resize-y rounded-[10px] border border-[#ededed] bg-white px-3 py-3 text-[16px] text-[#222] outline-none transition focus:border-(--primary-color)"
+                />
+              </div>
 
-      <div className="flex justify-center">
-        <button
-          type="submit"
-          className="rounded-full bg-(--primary-color) px-7 py-2.5 text-[14px] font-semibold uppercase text-white transition-colors hover:bg-[#d91823]"
-        >
-          Send Message
-        </button>
-      </div>
-    </form>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="rounded-full bg-(--primary-color) px-7 py-2.5 text-[14px] font-semibold uppercase text-white transition-colors hover:bg-[#d91823]"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
 
             {/* Contact Details */}
             <aside className="space-y-14 lg:pt-0">
@@ -269,7 +268,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <a
+              {/* <a
                 href="tel:8886992TRU"
                 className="flex items-center gap-4 text-(--primary-color)"
               >
@@ -279,7 +278,7 @@ export default function Contact() {
                 />
 
                 <span className="text-[23px]">888-699-2TRU</span>
-              </a>
+              </a> */}
 
               <a
                 href="mailto:info@rissholdings.com"

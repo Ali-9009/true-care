@@ -20,22 +20,7 @@ export default function Footer() {
 
         {/* Connect */}
         <div className="md:justify-self-end">
-          {/* <h2 className="mb-5 text-[25px] font-semibold text-[#ff1f2d]">
-            Connect
-          </h2> */}
-
           <div className="space-y-3">
-            {/* <Link
-              href="tel:8886992TRU"
-              className="flex items-center gap-5 text-[#ff1f2d]"
-            >
-              <i className="ri-phone-fill text-[21px]" aria-hidden="true" />
-
-              <span className="text-[31px] font-light leading-none">
-                888-699-2TRU
-              </span>
-            </Link> */}
-
             <div className="flex items-start gap-2">
               <i
                 className="ri-map-pin-fill mt-1 text-[18px]"
@@ -48,28 +33,6 @@ export default function Footer() {
                 Delaware, 19958
               </p>
             </div>
-
-            {/* <Link
-              href="mailto:info@rissholdings.com"
-              className="flex items-center gap-2 text-[16px] text-[#ff1f2d] hover:underline"
-            >
-              <i
-                className="ri-mail-fill text-[18px] text-[#777]"
-                aria-hidden="true"
-              />
-              info@rissholdings.com
-            </Link>
-
-            <Link
-              href="#"
-              className="flex items-center gap-2 text-[16px] text-[#ff1f2d] hover:underline"
-            >
-              <i
-                className="ri-linkedin-fill text-[18px] text-[#777]"
-                aria-hidden="true"
-              />
-              LinkedIn
-            </Link> */}
           </div>
         </div>
       </div>

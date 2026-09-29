@@ -75,18 +75,21 @@ export default function Page() {
       <section className="px-6 py-18 bg-(--bg-color)">
         <div className="mx-auto max-w-7xl">
           <p className="text-xl font-semibold leading-7 text-neutral-600">
-            Designed to cover customers from daily unexpected failures and mishaps. TruCare Plans come with no Surprise Cost and expert service that provides your customer with Peace of Mind Protection!
+            Designed to cover customers from daily unexpected failures and
+            mishaps. TruCare Plans come with no Surprise Cost and expert service
+            that provides your customer with Peace of Mind Protection!
           </p>
 
           <p className="mt-5 text-xl font-semibold leading-7 text-neutral-600">
-            TruCare Protection was created by a team of protection plan & service industry experts! Protection Plans for Appliances, Electronics & Furnitures
+            TruCare Protection was created by a team of protection plan &
+            service industry experts! Protection Plans for Appliances,
+            Electronics & Furnitures
           </p>
         </div>
       </section>
 
       <section className="px-6 py-6 bg-(--bg-color)">
         <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
-
           <figure className="relative">
             <div aria-hidden="true" />
 
@@ -108,21 +111,13 @@ export default function Page() {
               Trucare Offers Day-One Protection On:
             </h2>
 
-            <ul className="space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {protectionBenefits.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
+                  className="text-sm font-medium leading-6 text-neutral-500 sm:text-base"
                 >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
-                    <CircleCheckBig
-                      size={18}
-                      strokeWidth={2.5}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <span>{item}</span>
+                  {item}
                 </li>
               ))}
             </ul>
@@ -132,15 +127,15 @@ export default function Page() {
 
       <section className="px-6 py-6 bg-(--bg-color)">
         <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
-
           <div>
-            <h2 className="heading mb-5 max-w-xl">
-              Remote Diagnostics
-            </h2>
+            <h2 className="heading mb-5 max-w-xl">Remote Diagnostics</h2>
 
             <p className="mb-8 max-w-xl text-base leading-7 text-neutral-600 md:text-lg">
-              With TruCare´s remote diagnostics technology, technicians see precisely what de customer sees to better understand the product´s space and layout in the home without physically being at the service site. Technicians can communicate with customers visually ang help guide customers to the source of the repair needs.
-
+              With TruCare´s remote diagnostics technology, technicians see
+              precisely what de customer sees to better understand the product´s
+              space and layout in the home without physically being at the
+              service site. Technicians can communicate with customers visually
+              ang help guide customers to the source of the repair needs.
             </p>
           </div>
 
@@ -164,27 +159,19 @@ export default function Page() {
 
       <section className="py-16 px-6 pt-8 bg-(--bg-color)">
         <div className="mx-auto max-w-7xl">
-
           <div>
             <h2 className="heading mb-5">
-              Our Remote Diagnostics to our in-home service capabilities provide our partners and customers with the following:
+              Our Remote Diagnostics to our in-home service capabilities provide
+              our partners and customers with the following:
             </h2>
 
-            <ul className="space-y-2">
+            <ul className="list-disc space-y-2 pl-5">
               {protectionBenefits2.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
+                  className="text-sm font-medium leading-6 text-neutral-500 sm:text-base"
                 >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
-                    <CircleCheckBig
-                      size={18}
-                      strokeWidth={2.5}
-                      aria-hidden="true"
-                    />
-                  </span>
-
-                  <span>{item}</span>
+                  {item}
                 </li>
               ))}
             </ul>
@@ -194,7 +181,6 @@ export default function Page() {
 
       <section className="px-6 py-6 bg-(--bg-color)">
         <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
-
           <figure className="relative">
             <div aria-hidden="true" />
 
@@ -220,9 +206,10 @@ export default function Page() {
                 >
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
                     <CircleCheckBig
-                      size={18}
+                      size={24}
                       strokeWidth={2.5}
                       aria-hidden="true"
+                      className="text-(--primary-color)"
                     />
                   </span>
 
