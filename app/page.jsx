@@ -202,7 +202,7 @@ export default function Page() {
               {protectionBenefits3.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
+                  className="flex items-start gap-3 mb-6 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
                 >
                   <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
                     <CircleCheckBig

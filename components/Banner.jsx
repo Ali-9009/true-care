@@ -12,7 +12,7 @@ const slides = [
         highlight: "Dealer Partner!",
         description:
             "We are always looking for an experienced professionals with a  repair service history",
-        button: "Become a Service Partner",
+        button: "Become a Dealer Partner",
     },
     {
         image: "/assets/slide-2.webp",

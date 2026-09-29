@@ -13,7 +13,7 @@ const slides = [
     highlight: "Dealer Partner.",
     description:
       "Join our trusted network of experienced professionals and grow your repair business with dependable opportunities and support.",
-    buttonText: "Become a Service Partner",
+    buttonText: "Become a Dealer Partner",
     buttonLink: "#",
     image: "/assets/become-partner.jpg",
   },
