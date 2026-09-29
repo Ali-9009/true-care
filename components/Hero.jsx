@@ -10,7 +10,7 @@ const slides = [
     id: 1,
     eyebrow: "Service Partners",
     title: "Become a",
-    highlight: "Service Partner.",
+    highlight: "Dealer Partner.",
     description:
       "Join our trusted network of experienced professionals and grow your repair business with dependable opportunities and support.",
     buttonText: "Become a Service Partner",

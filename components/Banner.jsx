@@ -9,7 +9,7 @@ const slides = [
     {
         image: "/assets/slide-1.webp",
         title: "Become a",
-        highlight: "Service Partner!",
+        highlight: "Dealer Partner!",
         description:
             "We are always looking for an experienced professionals with a  repair service history",
         button: "Become a Service Partner",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Check } from "lucide-react";
+import { Check, CircleCheckBig } from "lucide-react";
 
 import Hero from "@/components/Hero";
 import Banner from "@/components/Banner";
@@ -114,9 +114,9 @@ export default function Page() {
                   key={item}
                   className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
                 >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-50 text-primary">
-                    <Check
-                      size={15}
+                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
+                    <CircleCheckBig
+                      size={18}
                       strokeWidth={2.5}
                       aria-hidden="true"
                     />
@@ -176,9 +176,9 @@ export default function Page() {
                   key={item}
                   className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
                 >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-50 text-primary">
-                    <Check
-                      size={15}
+                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
+                    <CircleCheckBig
+                      size={18}
                       strokeWidth={2.5}
                       aria-hidden="true"
                     />
@@ -218,9 +218,9 @@ export default function Page() {
                   key={item}
                   className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
                 >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-50 text-primary">
-                    <Check
-                      size={15}
+                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
+                    <CircleCheckBig
+                      size={18}
                       strokeWidth={2.5}
                       aria-hidden="true"
                     />
