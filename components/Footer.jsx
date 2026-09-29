@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#f7f7f7] text-[#777]">
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-7 py-16 md:grid-cols-2 md:px-10 lg:px-7">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-7 py-16 md:grid-cols-2 md:px-8 lg:px-7">
         {/* Logo */}
         <div className="flex items-start">
           <Link href="/" aria-label="TruCare Protection home">
