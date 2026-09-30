@@ -170,7 +170,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 pt-8 bg-(--bg-color)">
+      <section className="pt-16 px-6 pt-8 bg-(--bg-color)">
         <div className="mx-auto max-w-7xl">
           <div>
             <h2 className="heading mb-5">

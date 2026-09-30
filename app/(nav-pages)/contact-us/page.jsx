@@ -52,16 +52,16 @@ export default function Contact() {
         <div className="mx-auto max-w-[1140px]">
           {/* Heading */}
           <div className="text-center">
-            <h2 className="text-[40px] font-semibold leading-tight text-(--primary-color)">
+            <h2 className="md:text-[40px] text-3xl font-semibold leading-tight text-(--primary-color)">
               Contact Us
             </h2>
 
-            <p className="mt-7 text-[24px] text-[#333333]">
+            <p className="mt-3 md:text-[20px] text-md text-[#333333]">
               Drop Us A Note and We Will Contact You ASAP
             </p>
           </div>
 
-          <div className="mt-24 max-w-[600px] mx-auto">
+          <div className="mt-8 max-w-[600px] mx-auto">
             {/* Form */}
             <form className="space-y-6">
               <div>

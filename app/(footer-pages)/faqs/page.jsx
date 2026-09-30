@@ -50,10 +50,10 @@ const faqs = [
       <>
         You can send an email to{" "}
         <a
-          href="mailto:info@rissholdings.com"
+          href="mailto:info@trucareprotection.com"
           className="font-medium text-red-600 underline underline-offset-2 hover:text-red-700"
         >
-          info@rissholdings.com
+          info@trucareprotection.com
         </a>{" "}
         asking for the Terms and Conditions. Also, when you sign up, you receive
         a copy of your T&amp;C’s in a Welcome email.

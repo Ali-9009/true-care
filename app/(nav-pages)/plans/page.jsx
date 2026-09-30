@@ -13,7 +13,7 @@ export default function PlansPage() {
 
   return (
     <>
-      <section className="px-6 py-12 bg-(--bg-color) ">
+      <section className="px-6 pt-12 bg-(--bg-color) ">
         <div className="mx-auto grid max-w-7xl items-center md:grid-cols-2">
           <div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl xl:text-[68px]">
