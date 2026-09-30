@@ -280,7 +280,7 @@ export default function Contact() {
                 <span className="text-[23px]">888-699-2TRU</span>
               </a> */}
 
-              <a
+              {/* <a
                 href="mailto:info@rissholdings.com"
                 className="flex items-center gap-3 text-[#333333]"
               >
@@ -290,7 +290,7 @@ export default function Contact() {
                 />
 
                 <span className="text-[23px]">info@rissholdings.com</span>
-              </a>
+              </a> */}
             </aside>
           </div>
         </div>

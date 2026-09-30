@@ -5,32 +5,29 @@ export const plans = {
         image: "/assets/appliances.png",
 
         description:
-            "TruCare Appliance Protection Plans are designed to cover accidental failures or damages from a specific incident.",
+            "TruCare Protection Our Appliances Protection Program covers all expenses related to parts and labor in the event of product failure. Even issues out of your control, such as Power Surges, are covered from day one, and service is ALWAYS performed on-site or in the customer’s home.",
 
         coverageSections: [
             {
-                title: "Coverage for major household appliances:",
+                title: "Coverage is available for every appliance in the home, including:",
                 items: [
-                    "Mechanical or electrical breakdowns from normal use.",
-                    "Power surge protection.",
-                    "Failures caused by defects in materials or workmanship.",
-                    "Repair or replacement coverage for eligible appliances.",
-                    "Coverage for refrigerators, washers, dryers, dishwashers, ovens and more.",
-                ],
-            },
-            {
-                title: "Additional appliance protection:",
-                items: [
-                    "Parts and labor coverage for covered repairs.",
-                    "Service support through approved repair professionals.",
-                    "Replacement options when a covered appliance cannot be repaired.",
-                    "Protection plans designed around everyday household use.",
+                    "Refrigerators",
+                    "Freezers",
+                    "Washers.",
+                    "Dryers.",
+                    "Dishwashers",
+                    "Built ln Appliances",
+                    "Ranges",
+                    "Ranges Hoods",
+                    "Microwaves",
+                    "Small Appliances",
+                    "Garbage Disposals",
                 ],
             },
         ],
 
         bottomNote:
-            "Enjoy peace of mind protection with TruCare Appliance Protection Plans from the date of purchase or delivery.",
+            "Enjoy Peace of Mind protection with our various term plans.TruCare Appliance Protection offers terms from1yr, 2yr, 3yr, and five years of coverage, all starting on the date of purchase or delivery.",
     },
 
     electronics: {
@@ -39,32 +36,39 @@ export const plans = {
         image: "/assets/electronics.png",
 
         description:
-            "TruCare Electronics Protection Plans are designed to provide protection for the technology and electronics used throughout your home.",
+            "Our Electronics Protection Program covers all expenses related to parts and labor in the event of product failure. Even issues out of your control, such as Power Surges and even accidental damage, are covered, and service is ALWAYS available where your customer lives.",
 
         coverageSections: [
             {
-                title: "Coverage for electronics:",
+                title: "Coverage is available for the electronics you use in your daily life, including:",
                 items: [
-                    "Mechanical and electrical failures from normal use.",
-                    "Power surge protection.",
-                    "Covered failures involving internal components.",
-                    "Protection for televisions, computers, laptops, tablets and audio equipment.",
-                    "Repair or replacement coverage depending on the covered incident.",
+                    "Computers",
+                    "Tablets",
+                    "Televisions",
+                    "Car Stereos",
+                    "Smart Phones",
+                    "Home Theater",
+                    "Speakers",
+                    "Headphones",
+                    "Multi-Room Systems",
+                    "Cameras",
                 ],
             },
             {
-                title: "Additional electronics protection:",
+                title: "Additional Benefits for Electronics Protection:",
                 items: [
-                    "Coverage for eligible parts and labor.",
-                    "Access to service professionals for covered repairs.",
-                    "Replacement options when a covered product cannot be repaired.",
-                    "Protection designed for frequently used home electronics.",
+                    "Power Surge",
+                    "Accidental Damage",
+                    "Replacement Plans",
+                    "No deductibles or hidden costs",
+                    "Power Surge",
+                    "Power Surge",
                 ],
             },
         ],
 
         bottomNote:
-            "Enjoy peace of mind protection with TruCare Electronics Protection Plans from the date of purchase or delivery.",
+            "Enjoy Peace of Mind protection with our various term plans.TruCare Appliance Protection offers terms from1yr, 2yr, 3yr, and five years of coverage, all starting on the date of purchase or delivery.",
     },
 
     furniture: {
@@ -102,6 +106,6 @@ export const plans = {
         ],
 
         bottomNote:
-            "Enjoy Peace of Mind protection with our various term plans. TruCare Appliance Protection offers terms from 1yr, 2yr, 3yr, and five years of coverage, all starting on the date of purchase or delivery.",
+            "Enjoy Peace of Mind protection with our various term plans.TruCare Appliance Protection offers terms from1yr, 2yr, 3yr, and five years of coverage, all starting on the date of purchase or delivery.",
     },
 };
