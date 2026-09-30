@@ -23,13 +23,26 @@ const protectionBenefits2 = [
   "Take care of your customers",
 ];
 
-const protectionBenefits3 = [
-  "Appliances",
-  "Furniture",
-  "Electronic",
-  "And More",
-];
+import Link from "next/link";
 
+const protectionBenefits3 = [
+  {
+    name: "Appliances",
+    href: "/plans/appliances",
+  },
+  {
+    name: "Furniture",
+    href: "/plans/furniture",
+  },
+  {
+    name: "Electronic",
+    href: "/plans/electronics",
+  },
+  {
+    name: "And More",
+    href: "#",
+  },
+];
 const brands = [
   {
     name: "Samsung",
@@ -200,20 +213,22 @@ export default function Page() {
           <div className="flex justify-center">
             <ul className="space-y-2">
               {protectionBenefits3.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 mb-6 text-sm font-medium leading-6 text-neutral-800 sm:text-base"
-                >
-                  <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-primary">
-                    <CircleCheckBig
-                      size={24}
-                      strokeWidth={2.5}
-                      aria-hidden="true"
-                      className="text-(--primary-color)"
-                    />
-                  </span>
+                <li key={item.name} className="mb-6">
+                  <Link
+                    href={item.href}
+                    className="flex items-start gap-3 text-sm font-medium leading-6 text-neutral-800 transition-colors duration-300 sm:text-base"
+                  >
+                    <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full">
+                      <CircleCheckBig
+                        size={24}
+                        strokeWidth={2.5}
+                        aria-hidden="true"
+                        className="text-(--primary-color)"
+                      />
+                    </span>
 
-                  <span>{item}</span>
+                    <span>{item.name}</span>
+                  </Link>
                 </li>
               ))}
             </ul>

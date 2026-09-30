@@ -72,7 +72,7 @@ export default async function PlanDetailsPage({ params }) {
                     </section>
 
                     {/* Coverage Sections */}
-                    <div className="mt-16 space-y-12">
+                    {/* <div className="mt-16 space-y-12">
                         {plan.coverageSections.map((section) => (
                             <section key={section.title}>
                                 <h2 className="mb-5 text-2xl font-semibold text-(--primary-color)">
@@ -96,7 +96,33 @@ export default async function PlanDetailsPage({ params }) {
                                 </ul>
                             </section>
                         ))}
-                    </div>
+                    </div> */}
+
+                    <div className="mt-16">
+  {plan.coverageSections.map((section) => (
+    <section key={section.title}>
+      <h2 className="my-10 text-center text-xl font-bold text-black sm:text-2xl">
+        {section.title}
+      </h2>
+
+      <ul className="mx-auto grid max-w-2xl grid-cols-1 gap-x-20 gap-y-5 sm:grid-cols-2">
+        {section.items.map((item) => (
+          <li
+            key={item}
+            className="flex items-center gap-2 text-lg font-medium text-neutral-900"
+          >
+            <i
+              className="ri-arrow-right-s-line text-xl text-(--primary-color)"
+              aria-hidden="true"
+            />
+
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</div>
 
                     {/* Bottom Note */}
                     <div className="mt-16 text-center">

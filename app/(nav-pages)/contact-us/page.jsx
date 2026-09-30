@@ -97,6 +97,22 @@ export default function Contact() {
               </div>
 
               <div>
+                <label htmlFor="phone" className="sr-only">
+                  Phone Number
+                </label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  required
+                  placeholder="Phone Number*"
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
                 <label htmlFor="email" className="sr-only">
                   Email
                 </label>
