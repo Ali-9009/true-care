@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ToggleRight, ChartNoAxesColumnDecreasing, ChartNoAxesCombined } from "lucide-react";
 
 const leftBenefits = [
   "No Lemon Guarantee",
@@ -18,18 +17,17 @@ const rightBenefits = [
 ];
 
 export default function Benefits() {
-
-      const benefits = [
+  const benefits = [
     {
-      icon: <ToggleRight size={56} strokeWidth={2.2} />,
+      image: "/assets/icon-1.png",
       text: "Enable product warranties on your website.",
     },
     {
-      icon: <ChartNoAxesColumnDecreasing size={56} strokeWidth={2.2} />,
+      image: "/assets/icon-2.png",
       text: "Reduce product returns.",
     },
     {
-      icon: <ChartNoAxesCombined size={56} strokeWidth={2.2} />,
+      image: "/assets/icon-3.png",
       text: "Increase your profits TODAY!",
     },
   ];
@@ -129,7 +127,7 @@ export default function Benefits() {
                 aria-hidden="true"
               />
 
-              <h3 className="mb-7 text-[18px] font-semibold text-(--primary-color)">
+              <h3 className="mb-7 text-xl font-bold text-(--primary-color)">
                 Experience
               </h3>
 
@@ -146,7 +144,7 @@ export default function Benefits() {
                 aria-hidden="true"
               />
 
-              <h3 className="mb-7 text-[18px] font-semibold text-(--primary-color)">
+              <h3 className="mb-7 text-xl font-bold text-(--primary-color)">
                 Trusted
               </h3>
 
@@ -164,7 +162,7 @@ export default function Benefits() {
                 aria-hidden="true"
               />
 
-              <h3 className="mb-7 text-[18px] font-semibold text-(--primary-color)">
+              <h3 className="mb-7 text-xl font-bold text-(--primary-color)">
                 Compliance/Risk
               </h3>
 
@@ -181,7 +179,7 @@ export default function Benefits() {
                 aria-hidden="true"
               />
 
-              <h3 className="mb-7 text-[18px] font-semibold text-(--primary-color)">
+              <h3 className="mb-7 text-xl font-bold text-(--primary-color)">
                 Nationwide
               </h3>
 
@@ -199,7 +197,7 @@ export default function Benefits() {
         <div className="mx-auto grid max-w-[1180px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-10">
           {/* Left Image */}
           <figure className="flex justify-center lg:justify-start">
-             <Image
+            <Image
               src="/assets/benefits-1.png"
               alt="Remote Diagnostics"
               width={1200}
@@ -228,14 +226,17 @@ export default function Benefits() {
                   key={item.text}
                   className="flex flex-col items-center text-center"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="mb-5 flex min-h-[62px] items-center justify-center text-[#ff0033]"
-                  >
-                    {item.icon}
-                  </span>
+                  <div className="relative mb-5 size-[76px]">
+                    <Image
+                      src={item.image}
+                      alt=""
+                      fill
+                      className="object-contain"
+                      sizes="76px"
+                    />
+                  </div>
 
-                  <p className="max-w-[170px] text-[16px] font-medium leading-6 text-black">
+                  <p className="max-w-[170px] text-lg leading-6 text-black">
                     {item.text}
                   </p>
                 </article>

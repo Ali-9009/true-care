@@ -61,7 +61,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="mt-24 grid gap-16 lg:grid-cols-[1.1fr_0.8fr] lg:items-start">
+          <div className="mt-24 max-w-[600px] mx-auto">
             {/* Form */}
             <form className="space-y-6">
               <div>
@@ -105,9 +105,17 @@ export default function Contact() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   autoComplete="tel"
                   required
                   placeholder="Phone Number*"
+                  onInput={(e) => {
+                    e.currentTarget.value = e.currentTarget.value.replace(
+                      /\D/g,
+                      "",
+                    );
+                  }}
                   className={inputClass}
                 />
               </div>
@@ -214,34 +222,36 @@ export default function Contact() {
               </div>
 
               {interest && (
-                <div>
-                  <label htmlFor="businessType" className="sr-only">
-                    Business Type
-                  </label>
+                <fieldset>
+                  <legend className="mb-3 text-sm font-medium text-neutral-800">
+                    {interest === "dealer"
+                      ? "Select Dealer Type*"
+                      : "Select Service Type*"}
+                  </legend>
 
-                  <select
-                    id="businessType"
-                    name="businessType"
-                    required
-                    defaultValue=""
-                    className={inputClass}
-                  >
-                    <option value="">
-                      {interest === "dealer"
-                        ? "Select Dealer Type*"
-                        : "Select Service Type*"}
-                    </option>
-
+                  <div className="grid gap-3 sm:grid-cols-2">
                     {(interest === "dealer"
                       ? dealerOptions
                       : serviceOptions
                     ).map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
+                      <label
+                        key={option}
+                        className="flex cursor-pointer items-center gap-3"
+                      >
+                        <input
+                          type="checkbox"
+                          name="businessType"
+                          value={option}
+                          className="size-4 accent-(--primary-color)"
+                        />
+
+                        <span className="text-sm font-medium text-neutral-800">
+                          {option}
+                        </span>
+                      </label>
                     ))}
-                  </select>
-                </div>
+                  </div>
+                </fieldset>
               )}
 
               <div>
@@ -268,46 +278,6 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-
-            {/* Contact Details */}
-            <aside className="space-y-14 lg:pt-0">
-              <div className="flex items-start gap-3">
-                <i
-                  className="ri-map-pin-fill mt-1 text-[25px] leading-none text-(--primary-color)"
-                  aria-hidden="true"
-                />
-
-                <p className="text-[24px] leading-[1.8] text-[#333333]">
-                  1692 Coastal Highway, Lewes,
-                  <br />
-                  Delaware, 19958
-                </p>
-              </div>
-
-              {/* <a
-                href="tel:8886992TRU"
-                className="flex items-center gap-4 text-(--primary-color)"
-              >
-                <i
-                  className="ri-phone-fill text-[27px] leading-none"
-                  aria-hidden="true"
-                />
-
-                <span className="text-[23px]">888-699-2TRU</span>
-              </a> */}
-
-              {/* <a
-                href="mailto:info@rissholdings.com"
-                className="flex items-center gap-3 text-[#333333]"
-              >
-                <i
-                  className="ri-mail-fill text-[31px] leading-none text-(--primary-color)"
-                  aria-hidden="true"
-                />
-
-                <span className="text-[23px]">info@rissholdings.com</span>
-              </a> */}
-            </aside>
           </div>
         </div>
       </section>
