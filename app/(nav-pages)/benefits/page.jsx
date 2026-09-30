@@ -140,7 +140,7 @@ export default function Benefits() {
             {/* Trusted */}
             <article className="flex flex-col items-center">
               <i
-                className="ri-chat-3-fill mb-6 text-[68px] leading-none text-(--primary-color)"
+                className="ri-discuss-line mb-6 text-[68px] leading-none text-(--primary-color)"
                 aria-hidden="true"
               />
 
